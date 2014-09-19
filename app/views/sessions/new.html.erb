@@ -1,10 +1,9 @@
-<h1>Sign In For Particifind</h1>
-<%= form_for :session, :url => sessions_path do |f| %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<br />
-<%= f.label :password %>
-<%= f.password_field :password %>
-<br />
-<%= f.submit "Sign in" %>
-<% end %>
+
+<div class="row">
+  <div class="large-6 columns">
+  	<%= render "form" %>
+  </div>
+  <div class="large-6 columns">
+ 	<%= render :partial => "users/newform", :locals => {:user => new_user} %>
+  </div>
+</div>

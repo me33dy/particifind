@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
   		@current_user = @user
   		redirect_to root_path
   	else
-  		render 'new'
+  		flash[:notice] = "Username and password combination is incorrect."
+      render 'new'
   	end
   end
 

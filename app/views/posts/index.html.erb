@@ -3,3 +3,7 @@
 <% @posts.each do |p| %>
 	<%= p.title %> <%= link_to "Edit post", edit_post_path(p) %> <%= link_to "Delete this post", post_path(p), method: :delete %>
 	<% end %>
+
+
+
+

@@ -9,4 +9,9 @@ module ApplicationHelper
       redirect_to new_sessions_path
     end
   end
+
+  def new_user
+ 	 User.new    
+  end
+  
 end
