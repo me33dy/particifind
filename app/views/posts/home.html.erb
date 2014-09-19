@@ -1,9 +1,7 @@
-
-
 	<header>
 		<h1>Welcome to Particifind!</h1>
 	</header>
-
+<!-- 
 	<section id="leftbar">
 		**SEARCH OPTIONS
 		**OPTIONS FOR FILTER
@@ -11,31 +9,41 @@
 
 	<section id="content">
 
-		<% @posts.each do |p| %>
-		<article>
-			<div id="date">date</div>
-			<h4 class="studytitle"><%= p.title%></h4><br/>
-			<h2 class="title">Field:</h2><%= p.field%><br/>
-			<h2 class="title">Study Description:</h2> <%= p.description%><br/>
-			<h2 class="title">Study Duration</h2><%= p.begin_date%> to <%= p.end_date%><br/>
-			<h2 class="title">Participants Needed:</h2> <%= p.participants_wanted%><br/>
-			<h2 class="title">Criteria:</h2><br/>
-			<h2 class="title">Age:</h2> <%= p.age%><br/>
-			<h2 class="title">Gender:</h2> <%= p.gender%><br/>
-			
-			<h2 class="title">Compensation:</h2> <%= p.compensation%><br/>
-			<h2 class="title">Study duration:</h2> <%= p.time_needed%><br/>
-			<h2 class="title">Posted:</h2> <%= p.created_at%><br/>
-
-			<% if current_user %>
-				<% if p.user_id === current_user.id %>
-					<%= link_to "Edit post", edit_post_path(p) %> 
-					<%= link_to "Delete this post", post_path(p), method: :delete %>
-				<% end %>
-			<% end %>
-			
-		</article>
-		<% end %>
+		
+		
 	</section>
+ -->
 
+<div class="row">
+  	<div class="large-4 columns mainbody" id="leftnav">
+  		**SEARCH OPTIONS
+		**OPTIONS FOR FILTER
+	</div>
+  	
+  	<div class="large-8 columns">
+  		<% @posts.each do |p| %>
+			<article class="mainbody">
+				<div id="date">date</div>
+				<h4 class="studytitle"><%= p.title%></h4><br/>
+				<h2 class="title">Field:</h2><%= p.field%><br/>
+				<h2 class="title">Study Description:</h2> <%= p.description%><br/>
+				<h2 class="title">Study Duration</h2><%= p.begin_date%> to <%= p.end_date%><br/>
+				<h2 class="title">Participants Needed:</h2> <%= p.participants_wanted%><br/>
+				<h2 class="title">Criteria:</h2><br/>
+				<h2 class="title">Age:</h2> <%= p.age%><br/>
+				<h2 class="title">Gender:</h2> <%= p.gender%><br/>
+				
+				<h2 class="title">Compensation:</h2> <%= p.compensation%><br/>
+				<h2 class="title">Study duration:</h2> <%= p.time_needed%><br/>
+				<h2 class="title">Posted:</h2> <%= p.created_at%><br/>
 
+				<% if current_user %>
+					<% if p.user_id === current_user.id %>
+						<%= link_to "Edit post", edit_post_path(p) %> 
+						<%= link_to "Delete this post", post_path(p), method: :delete %>
+					<% end %>
+				<% end %>
+			</article>
+	<% end %>
+  </div>
+</div>

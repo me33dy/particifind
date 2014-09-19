@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <%= favicon_link_tag 'favicon.ico'%>
-  <title>Particifind</title>
-  <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-	<nav>
-		<div class="leftnav">
-		<%= link_to image_tag("logo2.png", alt: "Logo", id:"navlogo"), root_path%>
-		<% if current_user %>
-			<span>Logged in as: <%= current_user.email %></span>
-		<% end %>
-		</div>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-		<div class="rightnav">
-			<% if current_user %>
-				<%= link_to " + New Post", new_post_path %>
-				<%= link_to "My posts", posts_path %>
-				<%= link_to "Sign out", sessions_path, method: :delete %>
-			<% else %>
-				<%= link_to "Sign in", new_sessions_path %>
-				<%= link_to "Sign up", new_user_path %>
-			<% end %>
-		</div>
-	</nav>
+  <body>
+  <div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to image_tag('logo2.png', id: 'navlogo'), root_path %></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-<%= yield %>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if current_user %>
+          <li><%= link_to "Sign out", sessions_path, method: :delete %></li>
+          <li><%= link_to "New Post", new_post_path %></li>
+          <li><%= link_to "My post", posts_path %></li>
+        <% else %>
+          <li><%= link_to "Sign in", new_sessions_path %></li>
+          <li><%= link_to "Sign up", new_user_path %></li>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
+</div>
 
-</body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
