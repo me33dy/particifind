@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    resources :posts
+  end
+
   root "posts#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
