@@ -1,20 +1,15 @@
 module Api
-	class PostsController < ApplicationController 
+	class UsersController < ApplicationController 
 		respond_to :json
 
 		def index
-			@posts = Post.all
-			respond_with @posts
-
-		end
-
-		def curr_posts
-			@posts = current_user.posts
-			respond_with @posts
+			@user = User.all
+			respond_with @user
 
 		end
 
 		def show
+
 
 		end
 

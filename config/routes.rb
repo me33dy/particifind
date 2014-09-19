@@ -2,14 +2,13 @@ Rails.application.routes.draw do
 
   resources :users
   resource :sessions, only: [:new, :create, :destroy]
-  resources :posts do
-    collection do
-      get "home"
-    end
-  end
+  resources :posts 
 
   namespace :api do
     resources :posts
+     get 'usersposts' => "posts#curr_posts"
+    # resources :users
+
   end
 
   root "posts#home"
