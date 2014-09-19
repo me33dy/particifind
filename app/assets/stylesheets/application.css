@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-
-
 body{
 	background-color: #FFFFFF;
 	margin: 0;
@@ -23,9 +20,11 @@ body{
 	font-family: 'Quicksand', sans-serif;
 	color: #000000;
 }
+
 a{
 	text-decoration: none;
 }
+/*NAV SECTION*/
 #navlogo{
 	margin-top: 0.5em;
 	margin-left: 4em;
@@ -37,8 +36,8 @@ nav{
 	margin-top: 1em;
 	background-color: #000000;
 	height: 80px;
-
 }
+
 .leftnav{
 	float: left;
 }
@@ -50,63 +49,72 @@ nav{
 	color: #FFFFFF;
 	margin: 2em;
 }
-#homecontainer{
-	width: 100%;
-	text-align: center;
-}
+
+/*HEADER SECTION*/
 header{
 	width: 100%;
-
 	text-align: center;
 }
-
+/*HOME BODY*/
 section{
 	display: inline;
 }
-section#leftbar{	
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
- 	box-sizing: border-box;         /* Opera/IE 8+ */
+section#leftbar{
+	margin-top: 1em;
+	float: left;	
+	margin-left: 5em;
 	padding: 1em;
 	border-radius: 0.7em;
-	margin-top: 1em;
-	margin-left: 5em;
-	float: left;
-	width: 18%;
+	width: 20%;
 	height: 1000px;
 	background-color: rgba(0,0,0,0.05);
-}
-section#content{
-	margin-right: 1em;
-	float: right;
-	max-width: 1000px;
-	width: 75%;
-	height: auto;
-	overflow: auto;
-	margin: 0 auto;
-
-}
-article{
-	border-radius: 0.5em;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
  	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+section#content{
+	float: right;
+	margin-right: 0em;
+	min-width: 600px;
+	max-width: 1000px;
+	width: 70%;
+	height: auto;
+	overflow: auto;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+ 	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+article{
+
+	width: 90%;
 	display: inline;
 	float: left;
-	margin:1em 0 0 0 ;
-	width: 80%;
-	background-color: rgba(0,0,0,0.05);
+	border-radius: 0.5em;
 	padding: 1em;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+ 	box-sizing: border-box;         /* Opera/IE 8+ */
+	margin: 1em 0 0 1em;
+	background-color: rgba(0,0,0,0.05);
+	
 
 }
-#studytitle{
+.studytitle{
 	font-size: 2em;
 	margin: 0;
 }
-#title{
+.title{
 	font-weight: 800;
 	margin: 0;
 	font-size: 1em;
 	display: inline;
 	color: #eca71c;
+}
+#date{
+	float: right;
+	top: 1em;
+	right: 1em;
+	width: 100px;
+	height: 110px;
+	border: 1px solid black;
 }
