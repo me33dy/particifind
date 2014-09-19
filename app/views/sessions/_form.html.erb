@@ -1,20 +1,12 @@
-<h1>Sign In For Particifind</h1>
-	<!-- Error Message for incorrect email and password combination -->
-	<% flash.each do |name, msg| %>
-  		<% if msg.is_a?(String) %>
-	    	<div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
-	      	<%= content_tag :div, msg %>
-	      	<a href="#" class="close">&times;</a>
-		    </div>
-  		<% end %>
-	<% end %>
-	<!-- Sign In Form -->
-	<%= form_for :session, :url => sessions_path do |f| %>
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-		<br />
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-		<br />
-		<%= f.submit "Sign in" %>
-	<% end %>
+<%= form_for :session, :url => sessions_path do |f| %>
+	<li class="signIn"><%= f.text_field :email, :placeholder => "Email", :class =>"signInForm" %></li> 
+	<li class="signIn"><%= f.password_field :password, :placeholder =>"Password", :class =>"signInForm"  %></li>
+	<li class="signIn"><%= f.submit "Sign in", class: "button", id: "submitbutton" %></li><br/>
+		<% flash.each do |name, msg| %>
+  			<% if msg.is_a?(String) %>
+  				<li class="signInerror"> <%= content_tag :div, msg %></li>
+  			<% end %>
+		<% end %>
+<% end %>
+
+

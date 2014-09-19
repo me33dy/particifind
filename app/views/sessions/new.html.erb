@@ -1,9 +1,20 @@
-
-<div class="row">
-  <div class="large-6 columns">
-  	<%= render "form" %>
-  </div>
-  <div class="large-6 columns">
- 	<%= render :partial => "users/newform", :locals => {:user => new_user} %>
-  </div>
-</div>
+<h1>Sign In To Your Particifind Account</h1>
+	<!-- Error Message for incorrect email and password combination -->
+	<% flash.each do |name, msg| %>
+  		<% if msg.is_a?(String) %>
+	    	<div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+	      	<%= content_tag :div, msg %>
+	      	<a href="#" class="close">&times;</a>
+		    </div>
+  		<% end %>
+	<% end %>
+	<!-- Sign In Form -->
+	<%= form_for :session, :url => sessions_path do |f| %>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<br />
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		<br />
+		<%= f.submit "Sign in" %>
+	<% end %>

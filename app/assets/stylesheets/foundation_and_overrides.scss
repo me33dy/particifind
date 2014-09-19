@@ -60,7 +60,7 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #eca71c;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -921,12 +921,15 @@
 // $reveal-overlay-bg: rgba(#000, .45);
 // $reveal-overlay-bg-old: #000;
 
+
+
 // We use these to control the style of the modal itself.
 // $reveal-modal-bg: #fff;
-// $reveal-position-top: rem-calc(100);
-// $reveal-default-width: 80%;
+
+$reveal-default-width: 50%;
 // $reveal-modal-padding: rem-calc(20);
 // $reveal-box-shadow: 0 0 10px rgba(#000,.4);
+
 
 // We use these to style the reveal close button
 // $reveal-close-font-size: rem-calc(40);
@@ -943,6 +946,7 @@
 // $reveal-border-style: solid;
 // $reveal-border-width: 1px;
 // $reveal-border-color: #666;
+
 
 // $reveal-modal-class: "reveal-modal";
 // $close-reveal-modal-class: "close-reveal-modal";

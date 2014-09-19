@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <title><%= content_for?(:title) ? yield(:title) : "ParticiFind" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -24,24 +24,28 @@
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
-      <ul class="right">
+      <ul class="left" >
         <% if current_user %>
-          <li><%= link_to "Sign out", sessions_path, method: :delete %></li>
           <li><%= link_to "New Post", new_post_path %></li>
           <li><%= link_to "My post", posts_path %></li>
         <% else %>
-          <!-- <#%= link_to "Sign in", new_sessions_path %> -->
-          <li><a href="#" data-reveal-id="myModal">Sign In</a></li>
-          <li><%= link_to "Sign up", new_user_path %></li>
+          <%= render partial: 'sessions/form' %>
         <% end %>
+      </ul>
+      <ul class="right">
+          <% if current_user %>
+            <li><%= link_to "Sign out", sessions_path, method: :delete %></li>
+          <% else %>
+            <li><a href="#" data-reveal-id="myModal">Sign Up</a></li>
+          <% end %>
       </ul>
     </section>
     </nav>
   </div>      
 
 
-<div id="myModal" class="reveal-modal" data-reveal>
-<%= render partial: 'sessions/form', :controller=>"sessions", :action =>"create" %>
+<div id="myModal" class="reveal-modal customodal" data-reveal>
+<%= render partial: 'users/newform', :controller=>"users", :action =>"new", :locals => {:user => new_user}  %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
