@@ -32,14 +32,22 @@ a{
 	width: auto;
 }
 nav{
+	position: fixed;
+	top: 0px;
 	padding-top: 0.2em;
-	margin-top: 1em;
 	background-color: #000000;
 	height: 80px;
+	width: 100%;
 }
 
 .leftnav{
 	float: left;
+	color: #eca71c;
+}
+.leftnav span{
+	position: relative;
+	top: -2em;
+	left: 1em;
 }
 .rightnav{
 	margin-top: 1.3em;
@@ -52,6 +60,7 @@ nav{
 
 /*HEADER SECTION*/
 header{
+	margin-top: 8em;
 	width: 100%;
 	text-align: center;
 }

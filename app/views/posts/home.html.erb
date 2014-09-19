@@ -27,11 +27,13 @@
 			<h2 class="title">Study duration:</h2> <%= p.time_needed%><br/>
 			<h2 class="title">Posted:</h2> <%= p.created_at%><br/>
 
-			<% if p.user_id === current_user.id %>
-				<%= link_to "Edit post", edit_post_path(p) %> 
-				<%= link_to "Delete this post", post_path(p), method: :delete %>
+			<% if current_user %>
+				<% if p.user_id === current_user.id %>
+					<%= link_to "Edit post", edit_post_path(p) %> 
+					<%= link_to "Delete this post", post_path(p), method: :delete %>
+				<% end %>
 			<% end %>
-
+			
 		</article>
 		<% end %>
 	</section>
