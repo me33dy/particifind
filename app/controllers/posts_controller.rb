@@ -1,18 +1,18 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user, :except => [:home]
 	before_action :set_post, :only => [:edit, :show, :update, :destroy]
-	respond_to :json, :html
+	# respond_to :json, :html
 	
 	def show
 	end
 
 	def home
 		@posts = Post.all
-		respond_with @posts
+		# respond_with @posts
 	end
 	def index
 		@posts = current_user.posts.all
-		respond_with @posts
+		# respond_with @posts
 		
 	end
 

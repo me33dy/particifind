@@ -1,16 +1,16 @@
 module Api
 	class PostsController < ApplicationController 
-		respond_to :json
+		
 
 		def index
 			@posts = Post.all
-			respond_with @posts
+			render json: @posts, root: false
 
 		end
 
 		def curr_posts
 			@posts = current_user.posts
-			respond_with @posts
+			render json: @posts, root: false
 
 		end
 
