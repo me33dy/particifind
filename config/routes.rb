@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :posts
-     get 'usersposts' => "posts#curr_posts"
+     get 'userposts' => "posts#curr_posts"
     # resources :users
 
   end

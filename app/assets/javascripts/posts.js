@@ -10,6 +10,11 @@ postsApp.config(
     defaults.patch['Content-Type'] = 'application/json';
     defaults.common['Accept'] = 'application/json';
 }]);
+postsApp.factory('UserPosts', ['$resource', function($resource) {
+	return $resource('/api/userposts/:id', 
+		{id: '@id'},
+		{update: {method: "PATCH"}});
+}]);
 
 postsApp.factory('Post', ['$resource', function($resource) {
 	return $resource('/api/posts/:id', 
@@ -18,8 +23,19 @@ postsApp.factory('Post', ['$resource', function($resource) {
 		);
 }]);
 
+postsApp.controller('userPostsController', ['$scope', 'UserPosts', function($scope, UserPosts) {
+	$scope.userPosts = [];
+	UserPosts.query(function(posts) {
+		$scope.userPosts = posts;
+	});
+}]);
+
+
+
+
+
 postsApp.controller('postsController', ['$scope', 'Post', function($scope, Post) {
-	$scope.test = "hello";
+	
 
 	$scope.posts = [];
 	Post.query(function(posts) {

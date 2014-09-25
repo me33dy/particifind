@@ -1,9 +1,25 @@
 <h1>Welcome</h1>
-
+<%
+=begin %>
 <% @posts.each do |p| %>
 	<%= p.title %> <%= link_to "Edit post", edit_post_path(p) %> <%= link_to "Delete this post", post_path(p), method: :delete %>
 	<% end %>
+<% 
+=end %>
 
 
 
+<div  class="userContainer" ng-app="postsApp" ng-controller="userPostsController">
+	<div class="large-3 columns homeDiv" >
 
+		fdjalfsjlkaf jaoihfoaihnalskdjf
+		fhkajfl;kajfklajfkladhnvlknkjflk
+		fdjalfsjlkaf jaoihfoaihnalskdjf
+		fhkajfl;kajfklajfkladhnvlknkjflk
+	</div>
+
+	<div class="large-8 columns homeDiv" ng-repeat="p in userPosts">
+		<div>{{p.field}}</div>
+	</div>
+
+</div>
