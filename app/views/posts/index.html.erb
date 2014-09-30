@@ -9,14 +9,14 @@
 
 
 
-<div  class="userContainer" ng-app="postsApp" ng-controller="userPostsController">
+<div  class="userContainer">
 	<div class="large-3 columns homeDiv" id="userInfo">
 
 
 	</div>
 
 	<div class="large-8 columns">
-		<div class="article homeDiv" ng-repeat="p in userPosts">
+		<div class="article homeDiv" ng-repeat="p in posts">
 			<div id="postDate">date</div>
 			<h4 class="postTitle">{{ p.title}}</h4><br/>
 			<h2 class="postText">Field:</h2>{{ p.field}}<br/>

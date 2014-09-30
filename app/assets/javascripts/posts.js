@@ -11,38 +11,68 @@ postsApp.config(
     defaults.common['Accept'] = 'application/json';
 }]);
 postsApp.factory('UserPosts', ['$resource', function($resource) {
-	return $resource('/api/userposts/:id', 
+	return $resource('/api/posts/:id', 
 		{id: '@id'},
 		{update: {method: "PATCH"}});
 }]);
 
-postsApp.factory('Post', ['$resource', function($resource) {
-	return $resource('/api/posts/:id', 
-		{id: '@id'},
-		{update: {method: "PATCH"}}
-		);
-}]);
+// postsApp.factory('Post', ['$resource', function($resource) {
+// 	return $resource('/api/posts/:id', 
+// 		{id: '@id'},
+// 		{update: {method: "PATCH"}}
+// 		);
+// }]);
 
-postsApp.controller('userPostsController', ['$scope', 'UserPosts', function($scope, UserPosts) {
-	$scope.userPosts = [];
-	UserPosts.query(function(posts) {
-		$scope.userPosts = posts;
-	});
-}]);
-
-
-
-
-
-postsApp.controller('postsController', ['$scope', 'Post', function($scope, Post) {
-	
-
+postsApp.controller('postsController', ['$scope', 'UserPosts', function($scope, UserPosts) {
 	$scope.posts = [];
-	Post.query(function(posts) {
+	$scope.currentPost = null;
+
+	UserPosts.query(function(posts) {
 		$scope.posts = posts;
 	});
 
+	$scope.newOrEditPost = function(post) {
+		$scope.currentPost = post ? post : {};
+	};
+
+	$scope.createPost = function(post) {
+		$scope.newPost = new UserPosts(post);
+		console.log($scope.newPost);
+		$scope.newPost.$save().then(function(newPo) {
+			$scope.posts.push(newPo);
+		});
+
+		// $scope.newEmployee = new Employee(employee);
+		// console.log($scope.newEmployee);
+		// $scope.newEmployee.$create().then(function (newEmp) {
+		// 	$scope.employees.push(newEmp);
+		// })
+	};
+
+	$scope.saveChange = function(post) {
+		$scope.createPost(post);
+		$scope.currentPost = null;
+
+	};
+
 
 
 
 }]);
+
+
+
+
+
+// postsApp.controller('postsController', ['$scope', 'Post', function($scope, Post) {
+	
+
+// 	$scope.posts = [];
+// 	Post.query(function(posts) {
+// 		$scope.posts = posts;
+// 	});
+
+
+
+
+// }]);

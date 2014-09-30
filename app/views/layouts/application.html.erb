@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="postsApp">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body ng-controller="postsController">
   <div class="fixed">
     <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
@@ -27,7 +27,7 @@
       <ul class="left" >
         <% if current_user %>
           <li class="navText"> Hello, <%= current_user.username %>!</li>
-          <li><a href='#' data-reveal-id="postModal">New Post</a></li>
+          <li><a href='#' data-reveal-id="postModal" ng-click="newOrEditPost()">New Post</a></li>
           <li><%= link_to "My Postings", posts_path %></li>
         <% else %>
           <%= render partial: 'sessions/form' %>
