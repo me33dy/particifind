@@ -1,7 +1,20 @@
+<% if !current_user %>
+
+<div class="row">
+	<div class="large-12 columns" id="aboutpage">
+
+	<%= render :partial => 'users/newform',  :locals => { :@user => User.new } %>
+
+
+	</div>
+
+</div>
+
+<% else %>
 	<header>
 		<h1>Welcome to Particifind!</h1>
 	</header>
-
+<% end %>
 
 <div class="row"  ng-controller="postsController">
   	<div class="large-4 columns mainbody" id="leftnav">

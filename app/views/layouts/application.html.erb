@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "ParticiFind" %></title>
-
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -34,10 +33,22 @@
         <% end %>
       </ul>
       <ul class="right">
+      
+          <li><%= link_to "About", new_user_path %></li>
           <% if current_user %>
             <li><%= link_to "Sign out", sessions_path, method: :delete %></li>
           <% else %>
-            <li><a href="#" data-reveal-id="myModal">Sign Up</a></li>
+            <li>
+            
+            <% if current_page?(new_user_path) %>
+
+            <a href="#" class="signupbutton">Sign Up</a>
+
+            <% else %>
+            <%= link_to "Sign Up", new_user_path %>
+            <% end %>
+
+            </li>
           <% end %>
       </ul>
     </section>
@@ -49,19 +60,6 @@
     <a class="close-reveal-modal">&#215;</a>
   </div>
 
-  <div id="myModal" class="reveal-modal customodal" data-reveal>
-  <%= render partial: 'users/newform', :controller=>"users", :action =>"new", :locals => {:user => new_user}  %>
-    <a class="close-reveal-modal">&#215;</a>
-  </div>
-
-
-
-
-
-
-
-
-
     <%= yield %>
 
   <footer>
@@ -69,6 +67,25 @@
     <span> Los Angeles, California </span>
     <span> Built and Designed by: Eric Wu and Dinna Gonzales</span>
   </footer>
+
     <%= javascript_include_tag "application" %>
+
+  <script>
+    $(document).ready(function(){
+      $('.your-class').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true
+      });
+
+      $('.signupbutton').click(function(e) {
+        $('.your-class').slickGoTo(2);        
+      });
+    });
+  </script>
+  
   </body>
 </html>

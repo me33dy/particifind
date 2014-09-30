@@ -36,6 +36,14 @@ header{
 	width: 100%;
 	text-align: center;
 }
+
+#aboutpage{
+	background-color: green;
+	height: 250px;
+	max-height: 250px;
+	overflow: auto;
+}
+
 /*HOME BODY*/
 .mainbody{
 	background-color: rgba(0,0,0,0.05);
@@ -98,6 +106,13 @@ article:first-child{
 .navText{
 	margin-top: 1.8em;
 	color: #FFFFFF;
+}
+.scarousel{
+	margin: 0 auto;
+	height: 700px;
+	overflow: show;
+	width: 900px;
+	border: 1px solid black;
 }
 footer{
 	font-size: 0.8em;
