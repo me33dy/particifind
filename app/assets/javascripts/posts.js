@@ -37,21 +37,15 @@ postsApp.controller('postsController', ['$scope', 'UserPosts', function($scope, 
 
 	$scope.createPost = function(post) {
 		$scope.newPost = new UserPosts(post);
-		console.log($scope.newPost);
-		$scope.newPost.$save().then(function(newPo) {
-			$scope.posts.push(newPo);
+		$scope.newPost.$save(function(resource) {
+			$scope.posts.push(resource.post);
 		});
 
-		// $scope.newEmployee = new Employee(employee);
-		// console.log($scope.newEmployee);
-		// $scope.newEmployee.$create().then(function (newEmp) {
-		// 	$scope.employees.push(newEmp);
-		// })
 	};
 
 	$scope.saveChange = function(post) {
 		$scope.createPost(post);
-		$scope.currentPost = null;
+		$scope.currentPost = {};
 
 	};
 
