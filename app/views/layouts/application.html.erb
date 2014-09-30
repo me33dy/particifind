@@ -27,7 +27,7 @@
       <ul class="left" >
         <% if current_user %>
           <li class="navText"> Hello, <%= current_user.username %>!</li>
-          <li><%= link_to "New Post", new_post_path %></li>
+          <li><a href='#' data-reveal-id="postModal">New Post</a></li>
           <li><%= link_to "My Postings", posts_path %></li>
         <% else %>
           <%= render partial: 'sessions/form' %>
@@ -44,11 +44,17 @@
     </nav>
   </div>      
 
+  <div id="postModal" class="reveal-modal customodal" data-reveal>
+    <%= render 'posts/post_form' %>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
 
-<div id="myModal" class="reveal-modal customodal" data-reveal>
-<%= render partial: 'users/newform', :controller=>"users", :action =>"new", :locals => {:user => new_user}  %>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
+  <div id="myModal" class="reveal-modal customodal" data-reveal>
+  <%= render partial: 'users/newform', :controller=>"users", :action =>"new", :locals => {:user => new_user}  %>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+
 
 
 
@@ -57,6 +63,7 @@
 
 
     <%= yield %>
+
   <footer>
     <span>&copy; 2014 Particind.com </span>
     <span> Los Angeles, California </span>

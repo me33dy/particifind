@@ -1,36 +1,68 @@
-<%= form_for @post do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<br />
-<%= f.label :field %>
-<%= f.text_field :field %>
-<br />
-<%= f.label :begin_date %>
-<%= f.date_field :begin_date %>
-<br />
-<%= f.label :end_date %>
-<%= f.date_field :end_date %>
-<br />
-<%= f.label :participants_wanted %>
-<%= f.text_field :participants_wanted %>
-<br />
-<%= f.label :min_age %>
-<%= f.text_field :min_age %>
-<br />
-<%= f.label :max_age %>
-<%= f.text_field :max_age %>
-<br />
-<%= f.label :gender %>
-<%= f.text_field :gender %>
-<br />
-<%= f.label :description %>
-<%= f.text_field :description %>
-<br />
-<%= f.label :compensation %>
-<%= f.text_field :compensation %>
-<br />
-<%= f.label :time_needed %>
-<%= f.text_field :time_needed %>
-<br />
-<%= f.submit "Submit" %>
-<% end %>
+<form name="postForm" class="panel-body">
+	<div calss="row">
+		<label for="title">Title</label>
+		<input type="text" name="title">
+	</div>
+	<div calss="row">
+		<label for="field">Field</label>
+		<input type="text" name="field">
+	</div>
+
+
+	<div calss="row">
+		<div class="small-6 columns">
+			<label for="begin_date">Start Date</label>
+			<input type="date" name="begin_date">
+		</div>
+		<div class="small-6 columns">
+			<label for="end_date">End Date</label>
+			<input type="date" name="end_date">
+		</div>
+	</div>
+
+
+
+	<div calss="row">
+		<div class="small-6 columns">
+			<label for="participants_eanted"> # of participants</label>
+			<input type="number" name="participants_eanted">
+		</div>
+
+		<div class="small-6 columns">
+			<label type="text" for="gender">Gender</label>
+			<input type="text" name="gender">
+		</div>
+	</div>
+
+	<div calss="row">
+		<label for="desciption">Description</label>
+		<input type="text" name="desciption">
+	</div>
+	<div calss="row">
+		<label for="compensation">Compensation</label>
+		<input type="text" name="compensation">
+	</div>
+
+	<div calss="row">
+		<div class="small-4 columns">
+			<label for="time_needed">Time</label>
+			<input type="number" name="time_needed">
+		</div>
+
+		<div class="small-4 columns">
+			<label for="min_age">Min. Age</label>
+			<input type="number" name="min_age">
+		</div>
+
+		<div class="small-4 columns">
+			<label for="max_age">Max. Age</label>
+			<input type="number" name="max_age">
+		</div>
+
+	</div>
+	<div class="row">
+		<label for="location">Location</label>
+		<input type="text" name="location">
+	</div>
+
+</form>
