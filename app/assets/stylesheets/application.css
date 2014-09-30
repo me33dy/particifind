@@ -39,8 +39,8 @@ header{
 
 #aboutpage{
 	background-color: green;
-	height: 250px;
-	max-height: 250px;
+	height: 300px;
+	max-height: 300px;
 	overflow: auto;
 }
 
