@@ -38,7 +38,11 @@ header{
 }
 
 #aboutpage{
-	background-color: green;
+	background-image: url('study.jpg');
+	background-position: center;
+	background-size: cover;
+	border-radius: 5px;
+	margin: 5px;
 	height: 300px;
 	max-height: 300px;
 	overflow: auto;
@@ -107,12 +111,12 @@ article:first-child{
 	margin-top: 1.8em;
 	color: #FFFFFF;
 }
-.scarousel{
+.home_carousel{
 	margin: 0 auto;
 	height: 700px;
 	overflow: show;
 	width: 900px;
-	border: 1px solid black;
+
 }
 footer{
 	font-size: 0.8em;

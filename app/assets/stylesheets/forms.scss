@@ -1,0 +1,36 @@
+.userForm{
+	
+	padding: 2rem;
+	width: 50rem;
+	height: 42rem;
+	overflow: auto;
+	margin: 0 auto;
+
+	h1{
+		font-family: 'Abel', sans-serif !important;
+		text-align: center;
+	}
+	.fields{
+		text-align: center;
+		margin: 0 auto;
+		padding: 2.5rem;
+	
+		.signUpForm{
+			margin: 1rem auto;
+			border-radius: 0.3rem;
+			width: 20rem !important;
+		}
+
+		.passWord{
+			border-radius: 0.3rem;
+			width: 9.8rem !important;
+			display: inline-block !important;
+		}
+	}
+
+	.button{
+		display: block;
+		float:right;
+		border-radius: 0.3rem;
+	}
+}

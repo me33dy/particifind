@@ -1,20 +1,21 @@
-<h1>Sign Up for an Account in Particifind!</h1>
 
-<%= form_for @user do |f| %>
-	<%= f.label :username %>
-	<%= f.text_field :username %>
-	<br />
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-	<br />
-	<%= f.label :field %>
-	<%= f.text_field :field %>
-	<br />
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-	<br />
-	<%= f.label :password_confirmation %>
-	<%= f.password_field :password_confirmation %>
-	<br />
-<%= f.submit "Submit" %>
-<% end %>
+<div class="userForm">
+	<h1>Sign Up for an Account in Particifind!</h1>
+
+	<div class="fields">
+		<%= form_for @user do |f| %>
+			
+			<%= f.text_field :username, :placeholder => "User Name", class: "signUpForm" %>
+			
+			<%= f.text_field :field, :placeholder => "Field of Study", class: "signUpForm" %>
+			<%= f.text_field :email, :placeholder => "Email", class: "signUpForm" %>
+			
+			<div>
+			<%= f.password_field :password, :placeholder => "Password", class: "passWord" %>
+
+			<%= f.password_field :password_confirmation, :placeholder => "Password Confirmation", class: "passWord" %>
+			</div>
+			<%= f.submit "Submit", class: "button"%>
+		<% end %>
+	</div>
+</div>
