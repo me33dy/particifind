@@ -46,10 +46,10 @@
 
 // We use these to control various global styles
 // $body-bg: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Abel", Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: $font-weight-normal;
-// $body-font-style: normal;
+// $body-font-color: #222;font-family: 
+$body-font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-weight: 300;
+$body-font-style: light;
 
 // We use this to control font-smoothing
 // $font-smoothing: antialiased;
@@ -1190,7 +1190,7 @@ $reveal-default-width: 50%;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: #FFFFFF;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1198,7 +1198,8 @@ $topbar-height: 85px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: $font-weight-normal;
+$topbar-title-weight: 300;
+$topbar-title-font-size: rem-calc(20);
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
@@ -1211,7 +1212,7 @@ $topbar-height: 85px;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+$topbar-link-color: #000000;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
@@ -1240,8 +1241,8 @@ $topbar-height: 85px;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
+$topbar-menu-link-color: #000000;
+$topbar-menu-icon-color: #000000;
 // $topbar-menu-link-color-toggled: #888;
 // $topbar-menu-icon-color-toggled: #888;
 

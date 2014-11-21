@@ -1,26 +1,26 @@
 <% if !current_user %>
+<% else %>
+<% end %>
 
-<div class="row">
-	<div class="large-12 columns" id="aboutpage">
+<div class="landing_page">
 
+	<div class="participant">
+		
+		<div class="caption"> <p>Participate in a study </p> </div>
+
+		<a href="#"> <div class="see_all_link"> See all Research Studies</div></a>
 	
-	Find a research study near you
+	</div>
 
-
-	<button>About</button>
-	<button><%= link_to "Sign Up", new_user_path %></button>
-
+	<div class="researcher">
+		<div> <p>Post a study </p></div>
+		<a href="#"><div class="sign_up"> Sign Up</div></a>
+		<a href="#"><div class="log_in"> Log In</div></a>
 	</div>
 
 </div>
 
-<% else %>
-	<header>
-		<h1>Welcome to Particifind!</h1>
-	</header>
-<% end %>
-
-<div class="row"  ng-controller="postsController">
+<!-- <div class="row"  ng-controller="postsController">
   	<div class="large-4 columns mainbody" id="leftnav">
   		**SEARCH OPTIONS
 		**OPTIONS FOR FILTER
@@ -48,4 +48,4 @@
 			</article>
 	
   </div>
-</div>
+</div> -->

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "ParticiFind" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -15,23 +15,25 @@
     <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><%= link_to image_tag('logo2.png', id: 'navlogo'), root_path %></h1>
+        Particifind
       </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
-      <ul class="left" >
-        <% if current_user %>
-          <li class="navText"> Hello, <%= current_user.username %>!</li>
+      <!-- LOG IN**** -->
+      <!-- <ul class="left" >
+        <#% if current_user %>
+          <li class="navText"> Hello, <#%= current_user.username %>!</li>
           <li><a href='#' data-reveal-id="postModal" ng-click="newOrEditPost()">New Post</a></li>
-          <li><%= link_to "My Postings", posts_path %></li>
-        <% else %>
-          <%= render partial: 'sessions/form' %>
-        <% end %>
+          <li><#%= link_to "My Postings", posts_path %></li>
+        <#% else %>
+          <#%= render partial: 'sessions/form' %>
+        <#% end %>
       </ul>
+      LOG IN****
+       -->
       <ul class="right">
 
           <li><%= link_to "About", new_user_path %></li>
@@ -39,15 +41,11 @@
             <li><%= link_to "Sign out", sessions_path, method: :delete %></li>
           <% else %>
             <li>
-            
             <% if current_page?(new_user_path) %>
-
-            <a href="#" class="signupbutton">Sign Up</a>
-
+              <a href="#" class="signupbutton">Sign Up</a>
             <% else %>
-            <%= link_to "Sign Up", new_user_path %>
+              <%= link_to "Sign Up", new_user_path %>
             <% end %>
-
             </li>
           <% end %>
       </ul>
